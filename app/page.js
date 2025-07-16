@@ -769,9 +769,9 @@ const ProjectsSection = () => {
                                     <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className={`flex-1 text-center px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition-colors font-medium flex items-center justify-center ${project.liveLink === '#' ? 'opacity-50 cursor-not-allowed' : ''}`}>
                                         Live Demo <ExternalLink size={16} className="ml-2" />
                                     </a>
-                                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className={`flex-1 text-center px-4 py-2 bg-slate-700 text-white rounded-lg hover:bg-slate-800 transition-colors font-medium flex items-center justify-center ${project.githubLink === '#' ? 'opacity-50 cursor-not-allowed' : ''}`}>
+                                    {/* <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className={`flex-1 text-center px-4 py-2 bg-slate-700 text-white rounded-lg hover:bg-slate-800 transition-colors font-medium flex items-center justify-center ${project.githubLink === '#' ? 'opacity-50 cursor-not-allowed' : ''}`}>
                                         GitHub <Github size={16} className="ml-2" />
-                                    </a>
+                                    </a> */}
                                 </div>
                             </div>
                         </MotionDiv>
