@@ -533,12 +533,12 @@ const typedName = useTypewriter("M.d Abdul Awal", 90);
               <Github size={30} />
             </a>
             <a
-              href="#"
+              href="https://www.facebook.com/mahfuz.mintu.9/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors transform hover:-translate-y-1"
             >
-              <Linkedin size={30} />
+              <Facebook size={30} />
             </a>
           </MotionDiv>
         </MotionDiv>
@@ -961,13 +961,13 @@ const ContactSection = () => {
   };
 
   const contactLinks = [
-    { name: "LinkedIn", icon: <Linkedin size={24} />, href: "#" },
+    // { name: "LinkedIn", icon: <Linkedin size={24} />, href: "#" },
     {
       name: "GitHub",
       icon: <Github size={24} />,
       href: "https://www.github.com/Abdul-Awal1",
     },
-    { name: "Facebook", icon: <Facebook size={24} />, href: "#" },
+    { name: "Facebook", icon: <Facebook size={24} />, href: "https://www.facebook.com/mahfuz.mintu.9/" },
   ];
 
   return (
