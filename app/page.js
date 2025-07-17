@@ -1,8 +1,34 @@
 "use client"; // This directive is necessary for using hooks like useState and useEffect
 
 import React, { useState, useEffect, useRef } from "react";
-import { Home, User, Briefcase, Mail, Linkedin, Github, ExternalLink, Menu, X, Eye, Sun, Moon, ArrowUpCircle, Award, Database, Wrench, GraduationCap, Building, Calendar, Facebook, BookOpen, FlaskConical, Cpu, Copy, CheckCircle, ChevronDown } from 'lucide-react';
-
+import {
+  Home,
+  User,
+  Briefcase,
+  Mail,
+  Linkedin,
+  Github,
+  ExternalLink,
+  Menu,
+  X,
+  Eye,
+  Sun,
+  Moon,
+  ArrowUpCircle,
+  Award,
+  Database,
+  Wrench,
+  GraduationCap,
+  Building,
+  Calendar,
+  Facebook,
+  BookOpen,
+  FlaskConical,
+  Cpu,
+  Copy,
+  CheckCircle,
+  ChevronDown,
+} from "lucide-react";
 
 // --- Data from Md. Abdul Awal's CV with Logos ---
 const workExperienceData = [
@@ -28,7 +54,8 @@ const workExperienceData = [
     title: "Jr. Software Developer (Intern)",
     company: "Walton Hi-Tech Industries PLC",
     period: "Aug 2023 - Nov 2023",
-    description:"Gained hands-on experience contributing to internal web applications in a large-scale corporate environment.",
+    description:
+      "Gained hands-on experience contributing to internal web applications in a large-scale corporate environment.",
     logoUrl: "/walton.jpg",
     tags: ["Grails Framework", "JavaScript", "MySQL", "Web Applications"],
     details: [
@@ -56,51 +83,56 @@ const workExperienceData = [
   },
 ];
 const projectsData = [
-    {
-        id: 1,
-        title: "EventBy",
-        description: "A comprehensive event management platform for creating, promoting, and managing events of all sizes.",
-        imageUrl: "/signupattendee.png",
-        tags: ["Event Management", "SaaS", "React", "Node.js"],
-        liveLink: "https://app.eventby.xyz/",
-        githubLink: "#"
-    },
-    {
-        id: 2,
-        title: "Reply Master AI",
-        description: "An AI-powered browser extension to generate context-aware replies for social media platforms like LinkedIn and Twitter.",
-        imageUrl: "/replymaster.png",
-        tags: ["AI", "Browser Extension", "SaaS", "Next.js"],
-        liveLink: "https://replymaster.ai/",
-        githubLink: "#"
-    },
-    {
-        id: 3,
-        title: "Invoice Generator",
-        description: "A user-friendly web application for creating, managing, and downloading professional invoices.",
-        imageUrl: "/invoice.jpg",
-        tags: ["Business Tool", "Invoicing", "JavaScript", "HTML/CSS"],
-        liveLink: "https://demo.templatemonster.com/demo/507286.html",
-        githubLink: "#"
-    },
-    {
-        id: 4,
-        title: "Foodipos",
-        description: "A modern Point of Sale (POS) and ordering system designed for restaurants to streamline operations.",
-        imageUrl: "https://placehold.co/600x400/0ea5e9/ffffff?text=Foodipos",
-        tags: ["POS System", "Restaurant Tech", "React", "MongoDB"],
-        liveLink: "#",
-        githubLink: "#"
-    },
-    {
-        id: 5,
-        title: "Herlancer",
-        description: "A freelance marketplace concept designed to connect clients with talented female professionals across various industries.",
-        imageUrl: "https://placehold.co/600x400/0ea5e9/ffffff?text=Herlancer",
-        tags: ["Marketplace", "Freelancing", "Web Platform", "Next.js"],
-        liveLink: "#",
-        githubLink: "#"
-    }
+  {
+    id: 1,
+    title: "EventBy",
+    description:
+      "A comprehensive event management platform for creating, promoting, and managing events of all sizes.",
+    imageUrl: "/signupattendee.png",
+    tags: ["Event Management", "SaaS", "React", "Node.js"],
+    liveLink: "https://app.eventby.xyz/",
+    githubLink: "#",
+  },
+  {
+    id: 2,
+    title: "Reply Master AI",
+    description:
+      "An AI-powered browser extension to generate context-aware replies for social media platforms like LinkedIn and Twitter.",
+    imageUrl: "/replymaster.png",
+    tags: ["AI", "Browser Extension", "SaaS", "Next.js"],
+    liveLink: "https://replymaster.ai/",
+    githubLink: "#",
+  },
+  {
+    id: 3,
+    title: "Invoice Generator",
+    description:
+      "A user-friendly web application for creating, managing, and downloading professional invoices.",
+    imageUrl: "/invoice.jpg",
+    tags: ["Business Tool", "Invoicing", "JavaScript", "HTML/CSS"],
+    liveLink: "https://demo.templatemonster.com/demo/507286.html",
+    githubLink: "#",
+  },
+  {
+    id: 4,
+    title: "Foodipos",
+    description:
+      "A modern Point of Sale (POS) and ordering system designed for restaurants to streamline operations.",
+    imageUrl: "https://placehold.co/600x400/0ea5e9/ffffff?text=Foodipos",
+    tags: ["POS System", "Restaurant Tech", "React", "MongoDB"],
+    liveLink: "#",
+    githubLink: "#",
+  },
+  {
+    id: 5,
+    title: "Herlancer",
+    description:
+      "A freelance marketplace concept designed to connect clients with talented female professionals across various industries.",
+    imageUrl: "https://placehold.co/600x400/0ea5e9/ffffff?text=Herlancer",
+    tags: ["Marketplace", "Freelancing", "Web Platform", "Next.js"],
+    liveLink: "#",
+    githubLink: "#",
+  },
 ];
 
 const educationData = {
@@ -233,34 +265,85 @@ const Navbar = ({ onNavigate, darkMode, toggleDarkMode }) => {
   };
 
   return (
-  <nav className={`fixed w-full top-0 z-50 transition-all duration-300 ease-in-out ${isScrolled ? 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
+    <nav
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ease-in-out ${
+        isScrolled
+          ? "bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-lg"
+          : "bg-transparent"
+      }`}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <MotionDiv initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 500, delay: 0.2 }}>
-            <a href="#home" onClick={() => handleNavClick('home')} className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-blue-600 dark:from-sky-400 dark:to-blue-500 hover:opacity-80 transition-opacity">
+          <MotionDiv
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 500, delay: 0.2 }}
+          >
+            <a
+              href="#home"
+              onClick={() => handleNavClick("home")}
+              className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-blue-600 dark:from-sky-400 dark:to-blue-500 hover:opacity-80 transition-opacity"
+            >
               Abdul Awal
             </a>
           </MotionDiv>
           <div className="hidden md:flex items-center space-x-1">
             {navLinks.map((link, index) => (
-              <MotionDiv key={link.href} initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 300, delay: 0.1 * index + 0.3 }}>
-                <a href={`#${link.href}`} onClick={() => handleNavClick(link.href)} className={`flex items-center px-4 py-2 rounded-md text-md font-medium transition-all duration-300 ease-in-out ${activeLink === link.href ? 'bg-sky-500 text-white shadow-md dark:bg-sky-600' : 'text-slate-700 dark:text-slate-300 hover:bg-sky-100 dark:hover:bg-slate-800 hover:text-sky-600 dark:hover:text-sky-400'}`}>
+              <MotionDiv
+                key={link.href}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 300, delay: 0.1 * index + 0.3 }}
+              >
+                <a
+                  href={`#${link.href}`}
+                  onClick={() => handleNavClick(link.href)}
+                  className={`flex items-center px-4 py-2 rounded-md text-md font-medium transition-all duration-300 ease-in-out ${
+                    activeLink === link.href
+                      ? "bg-sky-500 text-white shadow-md dark:bg-sky-600"
+                      : "text-slate-700 dark:text-slate-300 hover:bg-sky-100 dark:hover:bg-slate-800 hover:text-sky-600 dark:hover:text-sky-400"
+                  }`}
+                >
                   {link.icon}
                   <span className="ml-2">{link.label}</span>
                 </a>
               </MotionDiv>
             ))}
-             <MotionDiv initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 300, delay: 0.8 }}>
-                <button onClick={toggleDarkMode} className="ml-4 p-2 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" aria-label="Toggle dark mode">
-                    {darkMode ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} />}
-                </button>
+            <MotionDiv
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 300, delay: 0.8 }}
+            >
+              <button
+                onClick={toggleDarkMode}
+                className="ml-4 p-2 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+                aria-label="Toggle dark mode"
+              >
+                {darkMode ? (
+                  <Sun size={20} className="text-yellow-400" />
+                ) : (
+                  <Moon size={20} />
+                )}
+              </button>
             </MotionDiv>
           </div>
           <div className="md:hidden flex items-center">
-             <button onClick={toggleDarkMode} className="mr-2 p-2 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" aria-label="Toggle dark mode">
-                {darkMode ? <Sun size={22} className="text-yellow-400" /> : <Moon size={22} />}
+            <button
+              onClick={toggleDarkMode}
+              className="mr-2 p-2 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+              aria-label="Toggle dark mode"
+            >
+              {darkMode ? (
+                <Sun size={22} className="text-yellow-400" />
+              ) : (
+                <Moon size={22} />
+              )}
             </button>
-            <button onClick={() => setIsOpen(!isOpen)} type="button" className="inline-flex items-center justify-center p-2 rounded-md text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-sky-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              type="button"
+              className="inline-flex items-center justify-center p-2 rounded-md text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-400 hover:bg-sky-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500"
+            >
               <span className="sr-only">Open main menu</span>
               {!isOpen ? <Menu size={24} /> : <X size={24} />}
             </button>
@@ -268,10 +351,25 @@ const Navbar = ({ onNavigate, darkMode, toggleDarkMode }) => {
         </div>
       </div>
       {isOpen && (
-        <MotionDiv initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} transition={{ duration: 300, ease: "easeInOut" }} className="md:hidden bg-white dark:bg-slate-900 shadow-lg origin-top" id="mobile-menu">
+        <MotionDiv
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          transition={{ duration: 300, ease: "easeInOut" }}
+          className="md:hidden bg-white dark:bg-slate-900 shadow-lg origin-top"
+          id="mobile-menu"
+        >
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navLinks.map((link) => (
-              <a key={link.href} href={`#${link.href}`} onClick={() => handleNavClick(link.href)} className={`flex items-center px-3 py-3 rounded-md text-base font-medium transition-colors duration-300 ${activeLink === link.href ? 'bg-sky-500 text-white dark:bg-sky-600' : 'text-slate-700 dark:text-slate-300 hover:bg-sky-100 dark:hover:bg-slate-800 hover:text-sky-600 dark:hover:text-sky-400'}`}>
+              <a
+                key={link.href}
+                href={`#${link.href}`}
+                onClick={() => handleNavClick(link.href)}
+                className={`flex items-center px-3 py-3 rounded-md text-base font-medium transition-colors duration-300 ${
+                  activeLink === link.href
+                    ? "bg-sky-500 text-white dark:bg-sky-600"
+                    : "text-slate-700 dark:text-slate-300 hover:bg-sky-100 dark:hover:bg-slate-800 hover:text-sky-600 dark:hover:text-sky-400"
+                }`}
+              >
                 {link.icon}
                 <span className="ml-3">{link.label}</span>
               </a>
@@ -434,8 +532,7 @@ const ParticleBackground = () => {
 
 // Hero Section Component
 const HeroSection = ({ onNavigate }) => {
-const typedName = useTypewriter("M.d Abdul Awal", 90);
-
+  const typedName = useTypewriter("M.d Abdul Awal", 90);
 
   return (
     <section
@@ -467,12 +564,12 @@ const typedName = useTypewriter("M.d Abdul Awal", 90);
             transition={{ duration: 500, delay: 0.7 }}
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-800 dark:text-white leading-tight mb-2">
-  Hi, I'm{" "}
-  <span className="whitespace-pre bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-blue-600 dark:from-sky-400 dark:to-blue-500 inline-block min-w-[15ch]">
-    {typedName}
-  </span>
-  <span className="animate-cursor-blink">|</span>
-</h1>
+              Hi, I'm{" "}
+              <span className="whitespace-pre bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-blue-600 dark:from-sky-400 dark:to-blue-500 inline-block min-w-[15ch]">
+                {typedName}
+              </span>
+              <span className="animate-cursor-blink">|</span>
+            </h1>
 
             <p className="text-2xl sm:text-3xl font-semibold text-slate-700 dark:text-slate-200 mb-6">
               Junior Software Developer
@@ -700,11 +797,11 @@ const ExperienceSection = ({ onOpenModal }) => {
                         {exp.company}
                       </p>
                     </div>
-                    <div className="bg-white p-2 rounded-md shadow-sm ml-4 flex-shrink-0">
+                    <div className="bg-white p-2 rounded-md shadow-sm ml-4 flex-shrink-0 max-w-[100px] w-full sm:max-w-[120px]">
                       <img
                         src={exp.logoUrl}
                         alt={`${exp.company} logo`}
-                        className="h-[100px] w-auto object-contain"
+                        className="w-full h-auto object-contain"
                       />
                     </div>
                   </div>
@@ -738,48 +835,74 @@ const ExperienceSection = ({ onOpenModal }) => {
 };
 // --- NEW Projects Section ---
 const ProjectsSection = () => {
-    return (
-        <section id="projects" className="py-20 md:py-28 bg-white dark:bg-slate-900 overflow-hidden">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <SectionTitle title="My Projects" subtitle="A selection of applications I've built and contributed to." />
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {projectsData.map((project, index) => (
-                        <MotionDiv
-                            key={project.id}
-                            initial={{ opacity: 0, y: 50 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 500, delay: index * 0.1 }}
-                            className="group bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700/50 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden"
-                        >
-                            <div className="relative overflow-hidden">
-                                <img src={project.imageUrl} alt={project.title} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
-                                <div className="absolute inset-0 bg-black/20"></div>
-                            </div>
-                            <div className="p-6 flex flex-col flex-grow">
-                                <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-2">{project.title}</h3>
-                                <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-grow">{project.description}</p>
-                                <div className="flex flex-wrap gap-2 mb-5">
-                                    {project.tags.map(tag => (
-                                        <span key={tag} className="inline-block bg-sky-100 dark:bg-sky-900/50 text-sky-700 dark:text-sky-300 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
-                                            {tag}
-                                        </span>
-                                    ))}
-                                </div>
-                                <div className="mt-auto flex items-center space-x-4">
-                                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className={`flex-1 text-center px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition-colors font-medium flex items-center justify-center ${project.liveLink === '#' ? 'opacity-50 cursor-not-allowed' : ''}`}>
-                                        Live Demo <ExternalLink size={16} className="ml-2" />
-                                    </a>
-                                    {/* <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className={`flex-1 text-center px-4 py-2 bg-slate-700 text-white rounded-lg hover:bg-slate-800 transition-colors font-medium flex items-center justify-center ${project.githubLink === '#' ? 'opacity-50 cursor-not-allowed' : ''}`}>
+  return (
+    <section
+      id="projects"
+      className="py-20 md:py-28 bg-white dark:bg-slate-900 overflow-hidden"
+    >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionTitle
+          title="My Projects"
+          subtitle="A selection of applications I've built and contributed to."
+        />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projectsData.map((project, index) => (
+            <MotionDiv
+              key={project.id}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 500, delay: index * 0.1 }}
+              className="group bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700/50 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden"
+            >
+              <div className="relative overflow-hidden">
+                <img
+                  src={project.imageUrl}
+                  alt={project.title}
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black/20"></div>
+              </div>
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 flex-grow">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="inline-block bg-sky-100 dark:bg-sky-900/50 text-sky-700 dark:text-sky-300 text-xs font-semibold px-3 py-1 rounded-full shadow-sm"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="mt-auto flex items-center space-x-4">
+                  <a
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex-1 text-center px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition-colors font-medium flex items-center justify-center ${
+                      project.liveLink === "#"
+                        ? "opacity-50 cursor-not-allowed"
+                        : ""
+                    }`}
+                  >
+                    Live Demo <ExternalLink size={16} className="ml-2" />
+                  </a>
+                  {/* <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className={`flex-1 text-center px-4 py-2 bg-slate-700 text-white rounded-lg hover:bg-slate-800 transition-colors font-medium flex items-center justify-center ${project.githubLink === '#' ? 'opacity-50 cursor-not-allowed' : ''}`}>
                                         GitHub <Github size={16} className="ml-2" />
                                     </a> */}
-                                </div>
-                            </div>
-                        </MotionDiv>
-                    ))}
                 </div>
-            </div>
-        </section>
-    );
+              </div>
+            </MotionDiv>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 const EducationSection = () => {
   return (
@@ -802,7 +925,7 @@ const EducationSection = () => {
             <div className="flex items-start gap-6 mb-4">
               <div className="bg-white p-2 rounded-md shadow-md">
                 <img
-                      src="/aiub.jpeg"
+                  src="/aiub.jpeg"
                   alt="AIUB Logo"
                   className="h-30 w-30 object-contain"
                 />
@@ -967,7 +1090,11 @@ const ContactSection = () => {
       icon: <Github size={24} />,
       href: "https://www.github.com/Abdul-Awal1",
     },
-    { name: "Facebook", icon: <Facebook size={24} />, href: "https://www.facebook.com/mahfuz.mintu.9/" },
+    {
+      name: "Facebook",
+      icon: <Facebook size={24} />,
+      href: "https://www.facebook.com/mahfuz.mintu.9/",
+    },
   ];
 
   return (
@@ -1095,7 +1222,7 @@ export default function App() {
     }
   }, []);
 
-   const toggleDarkMode = () => {
+  const toggleDarkMode = () => {
     setDarkMode((prevMode) => {
       const newMode = !prevMode;
       if (newMode) {
@@ -1152,9 +1279,13 @@ export default function App() {
     return () => document.head.removeChild(style);
   }, []);
 
- return (
+  return (
     <div className="font-inter bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors duration-300">
-      <Navbar onNavigate={handleNavigate} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <Navbar
+        onNavigate={handleNavigate}
+        darkMode={darkMode}
+        toggleDarkMode={toggleDarkMode}
+      />
       <main>
         <HeroSection onNavigate={handleNavigate} />
         <AboutSection />
@@ -1164,7 +1295,12 @@ export default function App() {
         <ContactSection />
       </main>
       <Footer />
-      {selectedExperience && <ExperienceModal experience={selectedExperience} onClose={handleCloseModal} />}
+      {selectedExperience && (
+        <ExperienceModal
+          experience={selectedExperience}
+          onClose={handleCloseModal}
+        />
+      )}
     </div>
   );
 }
