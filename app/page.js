@@ -142,7 +142,7 @@ const educationData = {
   cgpa: "3.85 / 4.00",
   logoUrl: "https://i.imgur.com/2a6eD7g.png",
   thesis: {
-    title: "A Machine Learning Approach for Predicting Software Defects",
+    title: " Heart Disease Detection System Using Machine Learning",
     description:
       "Developed and evaluated a predictive model using various classification algorithms to identify potential software defects early in the development lifecycle, achieving high accuracy and precision.",
   },
