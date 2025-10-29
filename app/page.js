@@ -695,21 +695,21 @@ const AboutSection = () => {
             className="prose prose-lg dark:prose-invert max-w-none text-slate-700 dark:text-slate-300"
           >
             <p>
-              I am a dedicated and results-oriented Software Developer, a proud
-              graduate with a B.Sc in Computer Science and Engineering from the
-              American International University-Bangladesh (AIUB) with a CGPA of
-              3.85.
+              I am a dedicated and hardworking software developer who recently
+              earned a Bachelor of Science degree in computer science and
+              engineering from AIUB in Bangladesh with a cumulative grade point
+              average of 3.85.
             </p>
             <p>
-              My passion lies in crafting elegant solutions to complex problems,
-              particularly in web development and database management. I thrive
-              in collaborative environments and enjoy turning ideas into
+              I'm passionate about creating elegant solutions to complex
+              problems with particular interest in web development and database
+              management. I'm a team player and enjoy turning ideas into
               tangible, high-quality applications.
             </p>
             <p>
-              I'm always eager to learn new technologies and contribute to
-              challenging projects. Feel free to explore my experience and get
-              in touch!
+              I'm looking forward to studying emerging technologies and
+              collaborating on challenging projects. Review my experience and
+              get in touch!
             </p>
           </MotionDiv>
           <MotionDiv
