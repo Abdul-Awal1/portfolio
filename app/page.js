@@ -553,7 +553,7 @@ const HeroSection = ({ onNavigate }) => {
             transition={{ duration: 500, delay: 0.5 }}
           >
             <img
-              src="/Awal.png"
+              src="/abdul.png"
               alt="Md. Abdul Awal"
               className="w-36 h-36 md:w-44 md:h-44 rounded-full mx-auto mb-8 shadow-2xl border-4 border-white dark:border-slate-700 transform hover:scale-105 transition-transform duration-300"
             />
