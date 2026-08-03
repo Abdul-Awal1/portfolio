@@ -18,7 +18,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{document.documentElement.classList.toggle('dark',localStorage.getItem('theme')!=='light')}catch(e){}`,
+          }}
+        />
+      </head>
       <body className={`${inter.variable} ${robotoMono.variable} antialiased`}>
         {children}
       </body>

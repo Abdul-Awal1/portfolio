@@ -33,6 +33,29 @@ import {
 // --- Data from Md. Abdul Awal's CV with Logos ---
 const workExperienceData = [
   {
+    id: 0,
+    title: "Jr. Software Engineer",
+    company: "Pixel BK Ltd.",
+    period: "2026 April - Present",
+    description:
+      "Developing and maintaining in-house web applications and integrations that streamline workflows across the organization.",
+    logoUrl: "/pixelbk-logo.png",
+    tags: [
+      "PHP",
+      "WordPress",
+      "MySQL",
+      "Google Apps Script",
+      "QuickBooks API",
+      "Xero API",
+      "Zoho CRM",
+    ],
+    details: [
+      "Developed and maintained the core in-house web platforms at app.pixelbk.com and pixelbk.com, used across departments to automate operational workflows.",
+      "Engineered API integrations with QuickBooks, Zoho CRM, and Xero to synchronize financial records, invoices, and customer pipelines.",
+      "Built custom workflow automation between internal AI tools, MySQL databases, Slack, Trello, and Google Apps Script.",
+    ],
+  },
+  {
     id: 1,
     title: "Junior Software Engineer",
     company: "Babylon Resources LTD.",
@@ -83,6 +106,39 @@ const workExperienceData = [
   },
 ];
 const projectsData = [
+  {
+    id: 0,
+    title: "Pixel BK Web Platform",
+    description:
+      "Developed and maintained Pixel BK's in-house web platforms, financial and CRM integrations, and workflow automation used across internal departments.",
+    imageUrl: "/pixelbk-project.png",
+    tags: [
+      "In-House Platform",
+      "MySQL",
+      "QuickBooks API",
+      "Xero API",
+      "Zoho CRM",
+      "Workflow Automation",
+    ],
+    liveLink: "https://app.pixelbk.com/",
+    githubLink: "#",
+  },
+  {
+    id: 6,
+    title: "Pixel BK Company Website",
+    description:
+      "Developed and maintained Pixel BK's company website as a WordPress project, supporting its public-facing content and digital presence.",
+    imageUrl: "/pixelbk-favicon.jpg",
+    tags: [
+      "WordPress",
+      "PHP",
+      "MySQL",
+      "Website Development",
+      "Content Management",
+    ],
+    liveLink: "https://pixelbk.com/",
+    githubLink: "#",
+  },
   {
     id: 1,
     title: "EventBy",
@@ -532,7 +588,7 @@ const ParticleBackground = () => {
 
 // Hero Section Component
 const HeroSection = ({ onNavigate }) => {
-  const typedName = useTypewriter("M.d Abdul Awal", 90);
+  const typedName = useTypewriter("Mdd. Abdul Awal", 90);
 
   return (
     <section
@@ -572,7 +628,7 @@ const HeroSection = ({ onNavigate }) => {
             </h1>
 
             <p className="text-2xl sm:text-3xl font-semibold text-slate-700 dark:text-slate-200 mb-6">
-              Junior Software Developer
+              Software Engineer & Full-Stack Developer
             </p>
           </MotionDiv>
           <MotionDiv
@@ -581,9 +637,9 @@ const HeroSection = ({ onNavigate }) => {
             transition={{ duration: 500, delay: 0.9 }}
           >
             <p className="mt-4 text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-xl mx-auto">
-              A highly motivated developer proficient in web development and
-              programming, eager to apply my skills to drive innovation and
-              growth.
+              Building production-ready web applications, business workflow
+              automation, and reliable financial and CRM integrations that
+              help teams operate more efficiently.
             </p>
           </MotionDiv>
           <MotionDiv
@@ -621,6 +677,15 @@ const HeroSection = ({ onNavigate }) => {
             transition={{ duration: 500, delay: 1.3 }}
             className="mt-12 flex justify-center space-x-6"
           >
+            <a
+              href="https://www.linkedin.com/in/abdulawal-dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-400 transition-colors transform hover:-translate-y-1"
+              aria-label="LinkedIn profile"
+            >
+              <Linkedin size={30} />
+            </a>
             <a
               href="https://www.github.com/Abdul-Awal1"
               target="_blank"
@@ -685,7 +750,7 @@ const AboutSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title="About Me"
-          subtitle="My journey, skills, and passion for development"
+          subtitle="My experience, technical strengths, and approach to building reliable software"
         />
         <div className="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
           <MotionDiv
@@ -695,21 +760,25 @@ const AboutSection = () => {
             className="prose prose-lg dark:prose-invert max-w-none text-slate-700 dark:text-slate-300"
           >
             <p>
-              I am a dedicated and hardworking software developer who recently
-              earned a Bachelor of Science degree in computer science and
-              engineering from AIUB in Bangladesh with a cumulative grade point
-              average of 3.85.
+              I am a full-stack software engineer with professional experience
+              building production web applications, internal business
+              platforms, and API-driven solutions. At Pixel BK, I develop and
+              maintain systems that support daily operations across multiple
+              departments.
             </p>
             <p>
-              I'm passionate about creating elegant solutions to complex
-              problems with particular interest in web development and database
-              management. I'm a team player and enjoy turning ideas into
-              tangible, high-quality applications.
+              My work spans frontend and backend development, database design,
+              workflow automation, and third-party integrations with platforms
+              including QuickBooks, Xero, and Zoho CRM. I focus on maintainable
+              architecture, dependable data flows, and responsive user
+              experiences.
             </p>
             <p>
-              I'm looking forward to studying emerging technologies and
-              collaborating on challenging projects. Review my experience and
-              get in touch!
+              Backed by a B.Sc. in Computer Science and Engineering from AIUB,
+              I combine strong technical fundamentals with practical product
+              experience. I enjoy collaborating with teams, solving complex
+              business problems, and delivering software that creates lasting
+              operational value.
             </p>
           </MotionDiv>
           <MotionDiv
@@ -762,57 +831,83 @@ const ExperienceSection = ({ onOpenModal }) => {
   return (
     <section
       id="experience"
-      className="py-20 md:py-28 bg-slate-50 dark:bg-slate-950 overflow-hidden"
+      className="relative py-20 md:py-28 bg-slate-50 dark:bg-slate-950 overflow-hidden"
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="absolute -top-32 -right-32 w-80 h-80 bg-sky-300/20 dark:bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-1/2 -left-40 w-96 h-96 bg-blue-300/20 dark:bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title="Work Experience"
-          subtitle="My professional journey and contributions"
+          subtitle="A track record of building reliable products, integrations, and business-focused software"
         />
-        <div className="relative max-w-2xl mx-auto">
+        <div className="relative max-w-4xl mx-auto">
           <div
-            className="absolute left-9 top-0 h-full w-0.5 bg-slate-200 dark:bg-slate-700"
+            className="absolute left-5 sm:left-10 top-3 bottom-3 w-px bg-gradient-to-b from-sky-500 via-sky-300 to-slate-200 dark:from-sky-400 dark:via-sky-700 dark:to-slate-800"
             aria-hidden="true"
           ></div>
-          <div className="space-y-12">
+          <div className="space-y-8 md:space-y-10">
             {workExperienceData.map((exp, index) => (
               <MotionDiv
                 key={exp.id}
-                className="relative pl-20"
+                className="relative pl-14 sm:pl-24"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 500, delay: index * 0.2 }}
               >
-                <div className="absolute left-[29px] top-1 h-5 w-5 bg-white dark:bg-slate-950 rounded-full border-4 border-sky-500"></div>
-                <div className="bg-white dark:bg-slate-800/50 backdrop-blur-sm border border-slate-200 dark:border-slate-700/50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 group">
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <p className="text-sm font-medium text-sky-600 dark:text-sky-400 mb-1">
-                        {exp.period}
-                      </p>
-                      <h3 className="text-2xl font-semibold text-slate-800 dark:text-white mb-1 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                <div
+                  className={`absolute top-8 left-[13px] sm:left-[31px] rounded-full border-4 border-slate-50 dark:border-slate-950 shadow-md ${
+                    exp.id === 0
+                      ? "w-5 h-5 bg-sky-500 ring-4 ring-sky-200/70 dark:ring-sky-900/70"
+                      : "w-4 h-4 sm:w-5 sm:h-5 bg-white dark:bg-slate-800 ring-2 ring-sky-500"
+                  }`}
+                ></div>
+                <div
+                  className={`relative overflow-hidden backdrop-blur-sm border rounded-2xl p-5 sm:p-7 shadow-lg hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 group ${
+                    exp.id === 0
+                      ? "bg-gradient-to-br from-white via-white to-sky-50 border-sky-200 dark:from-slate-800 dark:via-slate-800 dark:to-sky-950/60 dark:border-sky-800/70"
+                      : "bg-white/90 border-slate-200 dark:bg-slate-800/60 dark:border-slate-700/60"
+                  }`}
+                >
+                  {exp.id === 0 && (
+                    <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-500"></div>
+                  )}
+                  <div className="flex flex-col-reverse gap-5 sm:flex-row sm:items-start sm:justify-between">
+                    <div className="min-w-0">
+                      <div className="flex flex-wrap items-center gap-2 mb-3">
+                        <span className="inline-flex items-center text-sm font-semibold text-sky-600 dark:text-sky-400">
+                          <Calendar size={15} className="mr-1.5" />
+                          {exp.period}
+                        </span>
+                        {exp.id === 0 && (
+                          <span className="inline-flex items-center rounded-full bg-emerald-100 dark:bg-emerald-900/40 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-emerald-700 dark:text-emerald-300">
+                            Current Role
+                          </span>
+                        )}
+                      </div>
+                      <h3 className="text-xl sm:text-2xl font-bold text-slate-800 dark:text-white mb-2 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
                         {exp.title}
                       </h3>
-                      <p className="text-md font-semibold text-slate-500 dark:text-slate-400 mb-3">
+                      <p className="inline-flex items-center text-sm sm:text-base font-semibold text-slate-500 dark:text-slate-400">
+                        <Building size={16} className="mr-2 flex-shrink-0" />
                         {exp.company}
                       </p>
                     </div>
-                    <div className="bg-white p-2 rounded-md shadow-sm ml-4 flex-shrink-0 max-w-[100px] w-full sm:max-w-[120px]">
+                    <div className="flex h-16 w-28 sm:h-20 sm:w-32 items-center justify-center self-start bg-white p-3 rounded-xl border border-slate-200 shadow-sm flex-shrink-0">
                       <img
                         src={exp.logoUrl}
                         alt={`${exp.company} logo`}
-                        className="w-full h-auto object-contain"
+                        className="max-w-full max-h-full object-contain"
                       />
                     </div>
                   </div>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                  <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-7 mt-6 pt-5 border-t border-slate-200/80 dark:border-slate-700/70 mb-5">
                     {exp.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-5">
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {exp.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="inline-block bg-sky-100 dark:bg-sky-900/50 text-sky-700 dark:text-sky-300 text-xs font-semibold px-3 py-1 rounded-full shadow-sm"
+                        className="inline-block bg-sky-50 dark:bg-sky-900/40 text-sky-700 dark:text-sky-300 border border-sky-100 dark:border-sky-800/60 text-xs font-semibold px-3 py-1.5 rounded-full"
                       >
                         {tag}
                       </span>
@@ -820,9 +915,9 @@ const ExperienceSection = ({ onOpenModal }) => {
                   </div>
                   <button
                     onClick={() => onOpenModal(exp)}
-                    className="w-full text-center px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 focus:ring-4 focus:ring-sky-300 dark:focus:ring-sky-800 transition-all duration-300 font-medium flex items-center justify-center transform group-hover:scale-105"
+                    className="w-full sm:w-auto text-center px-5 py-2.5 bg-slate-900 dark:bg-sky-600 text-white rounded-lg hover:bg-sky-600 dark:hover:bg-sky-500 focus:ring-4 focus:ring-sky-300 dark:focus:ring-sky-800 transition-all duration-300 font-semibold flex items-center justify-center"
                   >
-                    View Details <Eye size={18} className="ml-2" />
+                    Explore Role <Eye size={18} className="ml-2" />
                   </button>
                 </div>
               </MotionDiv>
@@ -1084,7 +1179,11 @@ const ContactSection = () => {
   };
 
   const contactLinks = [
-    // { name: "LinkedIn", icon: <Linkedin size={24} />, href: "#" },
+    {
+      name: "LinkedIn",
+      icon: <Linkedin size={24} />,
+      href: "https://www.linkedin.com/in/abdulawal-dev/",
+    },
     {
       name: "GitHub",
       icon: <Github size={24} />,
@@ -1206,20 +1305,13 @@ const Footer = () => {
 
 export default function App() {
   const [selectedExperience, setSelectedExperience] = useState(null);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
-    // Set initial dark mode state from localStorage or system preference
-    const isDark =
-      localStorage.getItem("theme") === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches);
+    // Default new visitors to dark mode while preserving a saved light choice.
+    const isDark = localStorage.getItem("theme") !== "light";
     setDarkMode(isDark);
-    if (isDark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    document.documentElement.classList.toggle("dark", isDark);
   }, []);
 
   const toggleDarkMode = () => {
