@@ -36,7 +36,7 @@ const workExperienceData = [
     id: 0,
     title: "Jr. Software Engineer",
     company: "Pixel BK Ltd.",
-    period: "2026 April - Present",
+    period: "Apr 2026 - Present",
     description:
       "Developing and maintaining in-house web applications and integrations that streamline workflows across the organization.",
     logoUrl: "/pixelbk-logo.png",
@@ -59,7 +59,7 @@ const workExperienceData = [
     id: 1,
     title: "Junior Software Engineer",
     company: "Babylon Resources LTD.",
-    period: "Feb 2024 - Present",
+    period: "Feb 2024 - Apr 2026",
     description:
       "Developing and implementing diverse IT solutions to streamline business processes at a leading IT firm.",
     logoUrl: "/babylon.png",
